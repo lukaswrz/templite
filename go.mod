@@ -1,6 +1,6 @@
 module github.com/lukaswrz/templite
 
-go 1.23.2
+go 1.22.1
 
 require github.com/alphadose/haxmap v1.4.1
 

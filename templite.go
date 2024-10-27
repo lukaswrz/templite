@@ -20,6 +20,14 @@ type Renderer struct {
 	c  *haxmap.Map[string, *template.Template]
 }
 
+// NewRenderer creates a new Renderer instance.
+func NewRenderer(fs fs.FS) Renderer {
+	return Renderer{
+		FS: fs,
+		c:  haxmap.New[string, *template.Template](),
+	}
+}
+
 // Cache parses templates from patterns and stores them under the given name.
 // Returns an error if parsing fails.
 func (r Renderer) Cache(name string, patterns ...string) error {
